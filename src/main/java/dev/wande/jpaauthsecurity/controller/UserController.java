@@ -21,13 +21,13 @@ public class UserController {
     }
 
     @GetMapping
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public List<User> findAll() {
         return this.userService.findAll();
     }
 
     @GetMapping("{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public User findUser(@PathVariable("id") User user) {
         return user;
     }
