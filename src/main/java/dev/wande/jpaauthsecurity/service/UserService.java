@@ -5,6 +5,7 @@ import dev.wande.jpaauthsecurity.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,6 +23,10 @@ public class UserService {
 
     public Optional<User> findByUsername(String username)  {
         return this.userRepository.findByUsername(username);
+    }
+
+    public List<User> findAll() {
+        return this.userRepository.findAll();
     }
 
 }
